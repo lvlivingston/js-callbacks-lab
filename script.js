@@ -68,9 +68,7 @@ forEach(colors, log);
 
 // Exercise 5
 
-
-/*
-The below functions are working asynchronous functions - DO NOT
+/* The below functions are working asynchronous functions - DO NOT
 change any of their code. They are what we call "black boxes"
 because we do not need to know anything that goes on inside of them.
 Each of the three functions accept a single argument - a callback function.
@@ -82,8 +80,7 @@ FINISHED
 Hints: 
 - Call `step1` first.
 - You cannot call `step2` until after `step1` has "finished", similarly, you cannot call `step3` until `step2` has "finished".
-- You must console.log the last line of the output, `FINISHED`, after `step3` has "finished".
-*/
+- You must console.log the last line of the output, `FINISHED`, after `step3` has "finished". */
 
 function step1(cb) {
     setTimeout(function() {
@@ -111,3 +108,24 @@ step1(function() {
         step3(finished);
     });
 })
+
+//Bonus
+// Write a function named countdown that accepts as an arg the starting number of seconds and console.logs the count down to zero one second apart from each other.
+// For example:
+// countdown(3);
+// console.logs something like the following:
+// Count: 3
+// Count: 2
+// Count: 1
+// Count: 0
+
+function countdown (seconds) {
+    let interval = setInterval(function() {
+        console.log('Count: ' + seconds);
+        seconds--;
+        if (seconds < 0) {
+            clearInterval(interval);
+        } 
+    }, 1000);
+}
+countdown(3)
