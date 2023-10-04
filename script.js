@@ -35,8 +35,33 @@ console.log(words)
 // Check that logging longWords outputs
 // ["lengthy", "delicious"]
 
-const words = ['short', 'medium', 'delicious', 'nice', 'lengthy'];
+// const words = ['short', 'medium', 'delicious', 'nice', 'lengthy'];
 const longWords = words.filter(function(word) {
     return word.length >= 7;
 });
 console.log(longWords);
+
+// Exercise 4
+
+// Code a forEach method:
+// 		1. Write a function named forEach.
+//		2. The forEach function accepts two args, an array & a callback.
+//		3. Code the forEach method such that it iterates over each element in the array arg (use a for loop).
+//		4. For each iteration, invoke the callback arg, passing to it, the element and the index of the element.
+// Test with the below array and callback
+// calling forEach(colors, log) should resulting in this output:
+// Index: 0 / Element Value: red
+// Index: 1 / Element Value: green
+// Index: 2 / Element Value: blue
+// Index: 3 / Element Value: purple
+
+function forEach (arr, cb) {
+    for (let i=0; i < arr.length; i++) {
+        cb(arr[i], i);
+    }
+}
+const colors = ['red', 'green', 'blue', 'purple'];
+function log(elem, idx) {
+  console.log(`Index: ${idx} / Element Value: ${elem}`);
+}
+forEach(colors, log);
