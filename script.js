@@ -23,8 +23,20 @@ let timerId = setTimeout(writeDing, 3000);
 // ["nice", "short", "medium", "lengthy", "delicious"]
 
 const words = ['short', 'medium', 'delicious', 'nice', 'lengthy'];
-
 words.sort(function(a, b) {
     return a.length - b.length;
 });
 console.log(words)
+
+// Exercise 3
+
+// Filter the words array from above to create a new array
+// named longWords that includes only the words with 7 or more characters
+// Check that logging longWords outputs
+// ["lengthy", "delicious"]
+
+const words = ['short', 'medium', 'delicious', 'nice', 'lengthy'];
+const longWords = words.filter(function(word) {
+    return word.length >= 7;
+});
+console.log(longWords);
